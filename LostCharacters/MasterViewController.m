@@ -1,6 +1,7 @@
 
 #import "MasterViewController.h"
 #import "AddMemberViewController.h"
+#import "CustomTableViewCell.h"
 
 @interface MasterViewController () <UITableViewDataSource, UITableViewDelegate>
 @property NSArray *sortedCharactersArray;
@@ -70,9 +71,13 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSManagedObject *lostCharacter = [self.sortedCharactersArray objectAtIndex:indexPath.row];
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    cell.textLabel.text = [lostCharacter valueForKey:@"actorName"];
-    cell.detailTextLabel.text = [lostCharacter valueForKey:@"passengerName"];
+    CustomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    cell.actorNameLabel.text = [lostCharacter valueForKey:@"actorName"];
+    cell.passengerNameLabel.text = [lostCharacter valueForKey:@"passengerName"];
+    cell.seatNumberLabel.text = [lostCharacter valueForKey:@"planeSeat"];
+    cell.genderLabel.text = [lostCharacter valueForKey:@"gender"];
+    cell.hairColorLabel.text = [lostCharacter valueForKey:@"hairColor"];
+
     return cell;
 }
 
@@ -82,7 +87,25 @@
     NSManagedObject *castMember = [NSEntityDescription insertNewObjectForEntityForName:@"Character" inManagedObjectContext:self.managedObjectContext];
     [castMember setValue:addMemberViewController.actorNameField.text forKey:@"actorName"];
     [castMember setValue:addMemberViewController.castMemberField.text forKey:@"passengerName"];
+    [castMember setValue:addMemberViewController.passengerSeatField.text forKey:@"planeSeat"];
+    [castMember setValue:addMemberViewController.genderField.text forKey:@"gender"];
+    [castMember setValue:addMemberViewController.hairColorField.text forKey:@"hairColor"];
+
     [self.managedObjectContext save:nil];
     [self loadData];
 }
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [self.managedObjectContext deleteObject:[self.sortedCharactersArray objectAtIndex:indexPath.row]];
+        [self.managedObjectContext save:nil];
+        [self loadData];
+    }
+}
+
+-(NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return @"SMOKE MONSTER!!!";
+}
+
 @end

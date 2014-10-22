@@ -18,6 +18,7 @@
 		16CCF70119F6E35D00EB0B4C /* LostCharactersTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 16CCF70019F6E35D00EB0B4C /* LostCharactersTests.m */; };
 		16CCF70B19F6E41800EB0B4C /* lost.plist in Resources */ = {isa = PBXBuildFile; fileRef = 16CCF70A19F6E41800EB0B4C /* lost.plist */; };
 		16CCF70E19F72CDD00EB0B4C /* AddMemberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16CCF70D19F72CDD00EB0B4C /* AddMemberViewController.m */; };
+		16CCF71119F7641C00EB0B4C /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 16CCF71019F7641C00EB0B4C /* CustomTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,8 @@
 		16CCF70A19F6E41800EB0B4C /* lost.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = lost.plist; sourceTree = "<group>"; };
 		16CCF70C19F72CDD00EB0B4C /* AddMemberViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddMemberViewController.h; sourceTree = "<group>"; };
 		16CCF70D19F72CDD00EB0B4C /* AddMemberViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddMemberViewController.m; sourceTree = "<group>"; };
+		16CCF70F19F7641C00EB0B4C /* CustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCell.h; sourceTree = "<group>"; };
+		16CCF71019F7641C00EB0B4C /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +98,8 @@
 				16CCF6E319F6E35D00EB0B4C /* AppDelegate.m */,
 				16CCF6E819F6E35D00EB0B4C /* MasterViewController.h */,
 				16CCF6E919F6E35D00EB0B4C /* MasterViewController.m */,
+				16CCF70F19F7641C00EB0B4C /* CustomTableViewCell.h */,
+				16CCF71019F7641C00EB0B4C /* CustomTableViewCell.m */,
 				16CCF70C19F72CDD00EB0B4C /* AddMemberViewController.h */,
 				16CCF70D19F72CDD00EB0B4C /* AddMemberViewController.m */,
 				16CCF6EB19F6E35D00EB0B4C /* DetailViewController.h */,
@@ -237,6 +242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				16CCF70E19F72CDD00EB0B4C /* AddMemberViewController.m in Sources */,
+				16CCF71119F7641C00EB0B4C /* CustomTableViewCell.m in Sources */,
 				16CCF6ED19F6E35D00EB0B4C /* DetailViewController.m in Sources */,
 				16CCF6EA19F6E35D00EB0B4C /* MasterViewController.m in Sources */,
 				16CCF6E719F6E35D00EB0B4C /* LostCharacters.xcdatamodeld in Sources */,

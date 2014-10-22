@@ -13,6 +13,14 @@
 @interface AddMemberViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITextField *actorNameField;
 @property (weak, nonatomic) IBOutlet UITextField *castMemberField;
+@property (weak, nonatomic) IBOutlet UITextField *passengerSeatField;
+@property (weak, nonatomic) IBOutlet UITextField *genderField;
+@property (weak, nonatomic) IBOutlet UITextField *hairColorField;
+
+
+
+
+
 //@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 
